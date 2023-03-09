@@ -53,7 +53,11 @@ function fillSquare(e){
     if (e.type === 'mouseover' && !mouseDown) return;
     if (rainbowMode == true) {
         currentColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
-        rainbowButton.style.backgroundColor = currentColor;
+        let colorString = currentColor.toString();
+        let fixedString = colorString.slice(4, -1);
+        const rgbArray = fixedString.split(", ");
+        currentColor = rgbToHex(parseInt(rgbArray[0]), parseInt(rgbArray[1]), parseInt(rgbArray[2]));
+        color.value = currentColor;
     }
     e.target.style.cssText = `background-color: ${currentColor}`;
 }
@@ -78,6 +82,27 @@ function rainbowUpdate(){
         rainbowButton.style.backgroundColor = 'beige';
         rainbowButton.style.color = 'indigo';
     }
+}
+
+function valueToHex(c){
+    const hex = c.toString(16);
+    return hex;
+}
+
+function rgbToHex(r, g, b){
+    let hexR = valueToHex(r);
+    let hexG = valueToHex(g);
+    let hexB = valueToHex(b);
+    if (hexR.length == 1) {
+        hexR = "0" + hexR
+    } 
+    if (hexG.length == 1) {
+        hexG = "0" + hexG
+    } 
+    if (hexB.length == 1) {
+        hexB = "0" + hexB
+    }
+    return "#" + hexR + hexG + hexB; 
 }
 
 addSquares(length);

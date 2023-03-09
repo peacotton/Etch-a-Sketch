@@ -57,6 +57,35 @@ html {
     color: beige;
 }
 
+#stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#currentSize,
+#currentColor {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+#sizeValue {
+    font-size: 28.16px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+#clear {
+    height: 50px;
+    width: 100px;
+}
 button {
     background-color: beige;
     color: indigo;
