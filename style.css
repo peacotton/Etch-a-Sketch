@@ -43,6 +43,8 @@ html {
 #color {
     padding: 0px;
     border: none;
+    height: 50px;
+    width: 100px;
 }
 
 #footer {
@@ -74,19 +76,19 @@ html {
 }
 
 #sizeValue {
-    font-size: 28.16px;
+    font-size: 28px;
 }
 
 #button-container {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
-#clear {
-    height: 50px;
-    width: 100px;
-}
+
 button {
     background-color: beige;
     color: indigo;
+    height: 50px;
+    width: 100px;
 }
